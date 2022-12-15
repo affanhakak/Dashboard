@@ -1,0 +1,38 @@
+<div class="section">
+  <div
+    routerLinkActive="list-item-active"
+    routerLink="/area"
+    class="circle"
+    *ngFor="let circle of circles"
+    cdkDrag
+    (mouseover)="showArea = true"
+    (mouseout)="showArea = false"
+  >
+  </div>
+</div>
+<div class="section">
+  <div
+    routerLinkActive="list-item-active"
+    routerLink="/pie"
+    class="circle"
+    *ngFor="let circle of circles"
+    cdkDrag
+    (mouseover)="showCard = true"
+    (mouseout)="showCard = false"
+  ></div>
+</div>
+<div class="section">
+  <div
+    routerLinkActive="list-item-active"
+    routerLink="/card"
+    class="circle"
+    *ngFor="let circle of circles"
+    cdkDrag
+    (mouseover)="showPie = true"
+    (mouseout)="showPie = false"
+  ></div>
+</div>
+
+<app-widget-area *ngIf="showArea"></app-widget-area>
+<app-widget-card *ngIf="showCard"></app-widget-card>
+<app-widget-pie *ngIf="showPie"></app-widget-pie>
